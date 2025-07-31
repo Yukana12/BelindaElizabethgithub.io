@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: azure;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.greetings {
+    font-size: 5rem;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 10px #39c6d6, 0 0 40px #39c6d6, 0 0 80px #39c6d6;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+.greetings > span:nth-child(2) { animation-delay: 0.2s; }
+.greetings > span:nth-child(3) { animation-delay: 0.4s; }
+.greetings > span:nth-child(4) { animation-delay: 0.6s; }
+.greetings > span:nth-child(5) { animation-delay: 0.8s; }
+.greetings > span:nth-child(6) { animation-delay: 1.0s; }
+.greetings > span:nth-child(7) { animation-delay: 1.2s; }
+
+.description {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.botones {
+    padding: 12px 24px;
+    border-radius: 50px;
+    background-color: #0a2be9;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botones a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.botones:hover {
+    background-color: rgb(50, 194, 194);
+}
+
+/* Media Queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .greetings {
+        font-size: 3.5rem;
+        font-weight: 800;
+    }
+
+    .description {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+
+    .botones {
+        padding: 10px 20px;
+    }
+
+    .botones a {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .greetings {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
+    .botones {
+        padding: 8px 16px;
+    }
+
+    .botones a {
+        font-size: 0.8rem;
+    }
+}

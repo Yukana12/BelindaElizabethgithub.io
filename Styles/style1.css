@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('https://static.vecteezy.com/system/resources/previews/056/587/848/non_2x/pink-seamless-heart-pattern-on-white-background-romantic-love-design-free-vector.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#texto-burbujas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.texto-burbujas {
+    position: absolute;
+    font-size: 18px;
+    font-family: 'cursive', sans-serif;
+    color: rgb(13, 5, 5);
+    background-color: rgba(23, 223, 203, 0.9);
+    padding: 12px 24px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: floatText 8s ease-in-out forwards;
+    white-space: normal;
+    min-width: 100px;
+    max-width: 50vw;
+    text-align: center;
+    overflow: hidden;
+}
+
+@keyframes floatText {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(0);
+    }
+    20% {
+        opacity: 1;
+        transform: scale(1.1) translateY(-20px);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1) translateY(-60px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-100px);
+    }
+}
+
+.Mensaje {
+    background: rgba(239, 108, 220, 0.8);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    font-size: 28px;
+    color: rgb(10, 9, 1);
+    font-weight: bold;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.Mensaje:hover {
+    transform: scale(1.1);
+}
+
+.hearts {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: -1;
+    font-size: 50px;
+    color: red;
+    animation: floatHearts 5s ease-in-out infinite;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-150px) scale(1.5); opacity: 0.5; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.hearts:nth-child(2) { left: 75%; animation-duration: 6s; }
+.hearts:nth-child(3) { left: 40%; animation-duration: 7s; }
+.hearts:nth-child(4) { left: 60%; animation-duration: 8s; }
+.hearts:nth-child(5) { left: 75%; animation-duration: 9s; }
+
+.flowers {
+    position: absolute;
+    bottom: 10px;
+    animation: flowersAnimation 5s ease-in-out infinite;
+    font-size: 30px;
+}
+
+@keyframes flowersAnimation {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0; }
+}
+
+.flowers:nth-child(1) { left: 10%; animation-duration: 6s; }
+.flowers:nth-child(2) { left: 30%; animation-duration: 7s; }
+.flowers:nth-child(3) { left: 50%; animation-duration: 8s; }
+.flowers:nth-child(4) { left: 70%; animation-duration: 9s; }
+.flowers:nth-child(5) { left: 90%; animation-duration: 10s; }
+
+.bubbles {
+    position: absolute;
+    bottom: 10px;
+    font-size: 25px;
+    color: pink;
+    animation: bubbleAnimation 7s ease-in-out infinite;
+}
+
+@keyframes bubbleAnimation {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0; }
+}
+
+.bubbles:nth-child(1) { left: 10%; animation-duration: 8s; }
+.bubbles:nth-child(2) { left: 30%; animation-duration: 9s; }
+.bubbles:nth-child(3) { left: 50%; animation-duration: 10s; }
+.bubbles:nth-child(4) { left: 70%; animation-duration: 11s; }
+.bubbles:nth-child(5) { left: 90%; animation-duration: 12s; }
+
+#audioPlayer {
+    display: none;
+}
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+    .Mensaje {
+        font-size: 20px;
+        padding: 15px;
+    }
+    .texto-burbujas {
+        font-size: 14px;
+        padding: 8px 16px;
+        max-width: 40vw; /* Más pequeño para móviles */
+        min-width: 80px;
+    }
+    .flowers {
+        font-size: 20px;
+    }
+    .bubbles {
+        font-size: 18px;
+    }
+}
